@@ -5,15 +5,15 @@ var food;
 var foodStock;
 
 function preload(){
-  dogImg = loadImage("Dog.png");
-  happydogImg = loadImage("happydog.png");
+  dogImg = loadImage("Dog.png","happydog.png");
 }
 
 function setup() {
   createCanvas(500, 500);
   
-   Dog = Bodies.circle(50,250,320);
-  World.add(world,dog);
+   Dog = createSprite(250,300,10,10);
+   Dog.addImage("running",dogImg);
+
 
 }
 
@@ -22,11 +22,11 @@ function draw() {
 
   
 
-  imageMode(CENTER) ;
-  image(dogImg,Dog.position.x, Dog.position.y,60,60);
+  drawSprites();
+ }
 
  
-}
+
 
 
 
